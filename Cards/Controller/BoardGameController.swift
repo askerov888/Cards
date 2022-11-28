@@ -1,11 +1,9 @@
 import UIKit
-import Foundation
 
 struct Steps {
 	static var stepCount = 0 {
 		didSet {
 			print(stepCount)
-			
 		}
 	}
 }
