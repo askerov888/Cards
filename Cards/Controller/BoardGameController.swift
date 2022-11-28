@@ -4,9 +4,6 @@ struct Steps {
 	static var stepCount = 0 {
 		didSet {
 			print(stepCount)
-//			let board = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BoardGameController") as! BoardGameController
-//			board.stepCountLabel.text = "\(Steps.stepCount)"
-//			board.view.removeFromSuperview()
 			
 		}
 	}
