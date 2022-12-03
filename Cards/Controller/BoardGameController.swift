@@ -140,7 +140,7 @@ class BoardGameController: UIViewController {
 		let button = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
 		button.center.x = view.center.x
 		
-		button.setTitle(Singlton.shared.exampleString, for: .normal)
+		button.setTitle("\(Steps.stepCount)", for: .normal)
 		button.setTitleColor(.black, for: .normal)
 		button.setTitleColor(.gray, for: .highlighted)
 		button.center.x = view.center.x
