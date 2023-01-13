@@ -1,9 +1,10 @@
 import UIKit
 
+// Класс-Фабрика в которой генерируются карты с разными формами и цветами.
 class CardViewFactory {
 	func get(_ shapy: CardType, withSize size: CGSize, color: CardColor) -> UIView {
 		let frame = CGRect(origin: .zero, size: size)
-		let color = getViewColorBy(color: color)
+		let color = getViewColorBy(color: color)		
 		
 		switch shapy {
 		case .circle:
@@ -18,7 +19,7 @@ class CardViewFactory {
 			return CardView<RoundShape>(frame: frame, color: color)
 		}
 	}
-	
+	// Метод в котором находятся все цвета
 	func getViewColorBy(color: CardColor) -> UIColor {
 		switch color {
 		case .gray:

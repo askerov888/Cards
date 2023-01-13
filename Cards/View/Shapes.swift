@@ -1,5 +1,6 @@
 import UIKit
 
+// протокол фигуры слоя
 protocol ShapeLayerProtocol: CAShapeLayer {
 	init(size: CGSize, fillColor: CGColor)
 }
@@ -10,12 +11,15 @@ extension ShapeLayerProtocol {
 	}
 }
 
+// класс кругов на задней стороны карты
 class BackSideCircle: CAShapeLayer, ShapeLayerProtocol {
 	required init(size: CGSize, fillColor: CGColor) {
 		super.init()
-		
-		let path = UIBezierPath()
 	
+		// рисования с помощью путь Бейзера
+		let path = UIBezierPath()
+		
+		// создания 15 случайных кругов
 		for _ in 1...15 {
 			let randomX = Int.random(in: 0...Int(size.width))
 			let randomY = Int.random(in: 0...Int(size.height))
@@ -36,12 +40,15 @@ class BackSideCircle: CAShapeLayer, ShapeLayerProtocol {
 	}
 }
 
-
+// класс линий на задней стороны карты
 class BackSideLine: CAShapeLayer, ShapeLayerProtocol {
 	required init(size: CGSize, fillColor: CGColor) {
 		super.init()
+		
+		// рисования с помощью путь Бейзера
 		let path = UIBezierPath()
 		
+		// создания 15 случайных линий
 		for _ in 1...15 {
 			let randomXStart = Int.random(in: 0...Int(size.width))
 			let randomYStart = Int.random(in: 0...Int(size.height))
@@ -63,6 +70,7 @@ class BackSideLine: CAShapeLayer, ShapeLayerProtocol {
 	}
 }
 
+// класс описывающий цветной круг на передней стороны карты
 class CircleShape: CAShapeLayer, ShapeLayerProtocol {
 	required init(size: CGSize, fillColor: CGColor) {
 		super.init()
@@ -82,6 +90,7 @@ class CircleShape: CAShapeLayer, ShapeLayerProtocol {
 	}
 }
 
+// класс описывающий прозрачный круг на передней стороны карты
 class RoundShape: CAShapeLayer, ShapeLayerProtocol {
 	required init(size: CGSize, fillColor: CGColor) {
 		super.init()
@@ -102,8 +111,7 @@ class RoundShape: CAShapeLayer, ShapeLayerProtocol {
 	}
 }
 
-
-
+// класс описывающий квадрат на передней стороны карты
 class SquareShape: CAShapeLayer, ShapeLayerProtocol {
 	required init(size: CGSize, fillColor: CGColor) {
 		super.init()
@@ -119,6 +127,7 @@ class SquareShape: CAShapeLayer, ShapeLayerProtocol {
 	}
 }
 
+// класс описывающий крест на передней стороны карты
 class CrossShape: CAShapeLayer, ShapeLayerProtocol {
 	required init(size: CGSize, fillColor: CGColor) {
 		super.init()
@@ -139,6 +148,7 @@ class CrossShape: CAShapeLayer, ShapeLayerProtocol {
 	}
 }
 
+// класс описывающий прямоугольник на передней стороны карты
 class FillShape: CAShapeLayer, ShapeLayerProtocol {
 	required init(size: CGSize, fillColor: CGColor) {
 		super.init()

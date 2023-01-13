@@ -1,5 +1,6 @@
 import UIKit
 
+// класс стартовое окно
 class StartViewController: UIViewController {
 	
 	override func loadView() {
@@ -7,7 +8,7 @@ class StartViewController: UIViewController {
 		view.backgroundColor = .lightGray
 		view.addSubview(buttonStart)
 	}
-	
+	// кнопка старта
 	lazy var buttonStart = getButtonStart()
 	private func getButtonStart() -> UIButton {
 		let button = UIButton()
@@ -25,13 +26,11 @@ class StartViewController: UIViewController {
 		
 		return button
 	}
-
 	
+	// переход на игру
 	@objc func goToGameBoard(sender: UIButton) {
 		let story = UIStoryboard(name: "Main", bundle: nil)
 		let boardScene = story.instantiateViewController(withIdentifier: "BoardGameController") as! BoardGameController
 		navigationController?.pushViewController(boardScene, animated: true)
-		
-		//		let goToBoardSegue = UIStoryboardSegue.init(identifier: "goToBoard", source: story.instantiateViewController(withIdentifier: "StartViewController") as! StartViewController, destination: boardScene as! BoardGameController)
 	}
 }
